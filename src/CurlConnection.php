@@ -62,8 +62,10 @@
 			curl_setopt($this->curl, CURLOPT_TIMEOUT, 30);
 			curl_setopt($this->curl, CURLOPT_FOLLOWLOCATION, true);
 			curl_setopt($this->curl, CURLOPT_USERAGENT, $this->agent);
-			curl_setopt($this->curl, CURLOPT_VERBOSE, true);
-			//curl_setopt($this->curl, CURLOPT_AUTOREFERER, true);
+			curl_setopt($this->curl, CURLOPT_VERBOSE, false);
+            if (isset($this->opts[CURLOPT_REFERER]) == false) {
+			    curl_setopt($this->curl, CURLOPT_AUTOREFERER, true);
+            }
 
 			$url = parse_url($this->url);
 			if($url['scheme'] == 'https'){
