@@ -22,7 +22,7 @@
 			}
 
 			$this->curl = curl_init();
-            $this->agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.229 Whale/2.10.123";
+            $this->agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.229 Whale/2.10.123';
 		}
 
 		public function setHeader($header) {
