@@ -73,8 +73,11 @@
 				curl_setopt($this->curl, CURLOPT_SSL_VERIFYHOST, false);
 			}
 
-			if($this->method == 'POST') {
+			if($this->method != 'GET' && is_null($this->args) == false) {
 				curl_setopt($this->curl, CURLOPT_POST, true);
+                if (is_array($this->args) == true) {
+    		        $this->args = http_build_query($this->args);
+                }
 		        curl_setopt($this->curl, CURLOPT_POSTFIELDS, $this->args);
 			}
 
